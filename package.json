@@ -1,0 +1,16 @@
+{
+  "name": "hellogrpc",
+  "version": "1.0.0",
+  "description": "Aishwary's first implmenetation of gRPC using node.js",
+  "main": "index.js",
+  "dependencies": {
+    "grpc": "^1.16.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

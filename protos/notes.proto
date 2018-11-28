@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+service NoteService {
+    rpc List (Empty) returns (NoteList) {}
+    rpc GetStream (Empty) returns (stream NoteStream) {}
+    rpc PutStream (stream NoteStream) returns (DebugMessage) {}
+    rpc GetPutStream (stream DebugMessage) returns (stream DebugMessage) {}
+}
+
+message Empty {}
+
+message DebugMessage {
+    int32 code = 1;
+    string msg = 2;
+}
+
+message Note {
+    string id = 1;
+    string title = 2;
+    string content = 3;
+}
+
+message NoteList {
+    repeated Note notes = 1;
+}
+
+message NoteStream {
+    repeated Note notes = 1;
+    string order = 101 [default="-1"];
+}
